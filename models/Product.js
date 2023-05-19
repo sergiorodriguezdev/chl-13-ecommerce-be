@@ -35,6 +35,7 @@ Product.init(
         isNumeric: true
       }
     },
+    // Category ID FK
     category_id: {
       type: DataTypes.INTEGER,
       references: {

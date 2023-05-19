@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
           { 
             model: Product,
             through: {
-              attributes: []
+              attributes: []  // Remove attributes from the relational model/table from output
             }
           }
         ]
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
           { 
             model: Product,
             through: {
-              attributes: []
+              attributes: []  // Remove attributes from the relational model/table from output
             }
           }
         ]
@@ -56,7 +56,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    // create a new tag
+    // create a new tag using data provided in the body of the request
     const tagData = await Tag.create(req.body);
 
     res.status(200).json(tagData);
@@ -67,7 +67,8 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    // update a tag's name by its `id` value
+    // update a tag's name by its `id` value using data provided in the body of the request
+    //  'update' method returns an array
     const tagData = await Tag.update(req.body,
       {
         where: {
@@ -76,7 +77,7 @@ router.put('/:id', async (req, res) => {
       }
     );
 
-    if (!tagData[0]) {
+    if (!tagData[0]) { // Check if first element of the returned array is falsy
       res.status(404).json({ message: 'No tag found with this id' });
       return;
     }

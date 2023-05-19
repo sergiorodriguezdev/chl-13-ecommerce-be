@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
           { 
             model: Tag,
             through: {
-              attributes: []
+              attributes: []  // Remove attributes from the relational model/table from output
             }
           }
         ]
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
           { 
             model: Tag,
             through: {
-              attributes: []
+              attributes: []  // Remove attributes from the relational model/table from output
             }
           }
         ]
