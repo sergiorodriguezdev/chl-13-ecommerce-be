@@ -79,7 +79,7 @@ npm install sequelize@5.21.7
     ```
     Replace `<PATH TO REPO DIRECTORY>` with the actual path to the root directory of the repo.
 
-4. ### Updating database connection information
+3. ### Updating database connection information
     Make a copy of the `.env.EXAMPLE` file and name it `.env`. Then, set the following values:
     + `DB_HOST`: This is optional. If you don't provide a value for it then the host value will default to `localhost`
     + `DB_NAME`: Set this to `ecommerce_db`.
